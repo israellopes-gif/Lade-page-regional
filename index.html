@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter">
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="robots" content="noindex">
+
+    <!-- Instalação errada de propósito, para demonstrar a detecção de consentimento tardio: a tag do Google
+         carrega antes da CMP e a CMP só é injetada depois do load, então a tag envia dados sem estado de consentimento. -->
+    <script src="https://www.googletagmanager.com/gtag/js?id=AW-10805872214"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-10805872214');
+    </script>
+
+    <script>
+        window.addEventListener('load', function () {
+            var cmp = document.createElement('script');
+            cmp.src = 'https://cdn-api-cmp.becompliance.com/client-side/2100/c19c017b-874b-4d85-b346-d96253cee6fa.js';
+            document.head.appendChild(cmp);
+        });
+    </script>
+
+    <title>Escola DNC</title>
+</head>
+<body>
+    <div id="menu-superior">
+        <a href="https://www.escoladnc.com.br/"><img src="imagens/logo.svg" id="logo" alt="ERROR"></a>
+        <h1 id="titulo-MenuSuperior">Dê os primeiros passos da <br>
+        sua carreira em Tecnologia
+        </h1>
+        <p id="texto-menusuperior">Inscreva-se no curso gratuito de Introdução à<br>
+          Tecnologia da DNC School e aprenda os principais<br>
+          fundamentos para construir experiências efetivas. 
+        </p>
+    </div>
+    
+    
+    <div id="menu-informacional" >
+    <p class="texto-informativo"> <img src="icones/registro.svg" alt="" class="icone" id="registro">Certificado de conclusão</p>
+    <p class="texto-informativo">  <img src="icones/relogio.svg" alt="" class="icone" id="relogio">4 horas de conteúdo</p>
+    <p class="texto-informativo"> <img src="icones/camera.svg" alt="" class="icone" id="camera">Aulas online gravadas</p>
+    </div>
+
+
+    <div id="seçãovideo">
+        <!-- Embed entregue já neutralizado (data-src, sem src): o navegador
+             inicia a requisição do iframe no instante do parsing — antes de a
+             CMP alcançá-lo — e uma chamada ao YouTube escapava. Sem src não há
+             corrida; a CMP restaura o player quando "functionality" é aceita. -->
+        <iframe id="video" data-category="functionality" width="502" height="283" data-src="https://www.youtube.com/embed/ITxGkd9h4n4" title="DNC - A escola inovadora que forma profissionais de alta perfomance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <div><h1 id="titulovideo">Aprenda com especialistas e <br>
+    comece seu primeiro projeto</h1><br><br>
+    
+    <p id="textovideo">Conheça o processo de desenvolvimento e entenda como utilizar <br>
+        os principais métodos e ferramentas da área para resolver <br>
+         problemas complexos. <br><br>
+
+        Conquiste seu certificado e desenvolva um projeto prático para <br>
+        aplicar seus conhecimentos.</p>
+    </div>
+</div> 
+
+<div id="carrossel">
+  <h1 id="titulocarrossel">Mais de 500 alunos já iniciaram seus estudos</h1>
+ <div id="divcards">
+
+    <img id="setaesquerda" class="seta" onclick="RolarParaEsquerda()" src="icones/setaesquerda.svg" alt="">
+    <img id="leonardo" class="cards" src="cards/leonardo.svg" alt=""> 
+    <img id="samantha" class="cards" src="cards/samantha.svg" alt="">
+    <img id="bruna" class="cards" src="cards/bruna.svg" alt="">
+    <img id="setadireita" class="seta" onclick="RolarParaDireita()" class="seta" src="icones/setadireita.svg"">
+   
+</div>
+</div>
+ 
+
+<div id="formulario">
+    <h1 id="tituloformulario">Comece agora mesmo e dê o próximo passo da sua carreira</h1>
+    <form action="https://api.sheetmonkey.io/form/r2GooGfx5u6HKPkxYxdwqh" method="post">
+        <input type="text" placeholder="Nome" name="Name" required> <br>
+        <input type="email" placeholder="Email" name="Email" required> <br>
+        <input type="number" placeholder="Telefone"  name="Phone"><br>
+        <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
+
+        <button type="submit">Acesse a ementa grátis</button>
+    </form>
+
+
+</div>
+<script src="index.js"></script>
+</body>
+
+</html>
